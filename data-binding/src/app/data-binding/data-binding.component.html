@@ -1,6 +1,6 @@
 <section class="property-binding">
 
-    <article>
+    <!-- <article>
         <h3>
          Interpolação / Interpolation   
         </h3>
@@ -13,21 +13,71 @@
 
         <p>Curso de Angular e gosto do curso: {{ true && cursoAngular}} </p>
 
-    </article>
-
+    </article> -->
+<!-- 
     <article>
-        <h3>property-binding</h3>
+        <h3>property-binding</h3> -->
         <!-- <img src=" {{ urlImage }} "> -->
 
-        <img [src]="urlImage"> 
+        <!-- <img [src]="urlImage"> 
 
-    </article>
+    </article> -->
 
 
 
 
     <article>
         <h3>Class e Style Binding</h3>
+
+        <div>
+            Selecione uma classe:
+
+
+            <select #classe (change) = "0">
+                <option value="alert-success">Sucesso</option>
+                <option value="alert-info">Info</option>
+                <option value="alert-warning">Warning</option>
+                <option value="alert-danger">Erro</option>
+
+
+            </select>
+            <br> <br>
+
+            <!-- Class binding com Interpolação -->
+            <div class="alert {{ classe.value }}" role="alert">
+                Texto colorido conforme o combobox
+            </div>
+
+            <!-- Property binding de classe -->
+            <div class="alert " role="alert"
+            [class.alert-success]="classe.value == 'alert-success'">
+                Sucesso
+            </div>
+
+            <div class="alert " role="alert"
+            [class.alert-info]="classe.value == 'alert-info'">
+                Info
+            </div>
+
+            <div class="alert " role="alert"
+            [class.alert-warning]="classe.value == 'alert-warning'">
+                Warning
+            </div>
+
+            <div class="alert " role="alert"
+            [class.alert-danger]="classe.value == 'alert-danger'">
+                Erros
+            </div>
+
+
+            <!-- Property binding com estilo de classe -->
+            <div class="alert alert-danger" role="alert"
+            [style.display]="classe.value == 'alert-danger' ? 'block' : 'none' " >
+                Esse texto só aparece em caso de erro.
+            </div>
+
+    
+        </div>
 
         
     </article>
