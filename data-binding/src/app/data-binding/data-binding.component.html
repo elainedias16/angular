@@ -26,7 +26,7 @@
 
 
 
-    <article>
+    <!-- <article>
         <h3>Class e Style Binding</h3>
 
         <div>
@@ -41,15 +41,15 @@
 
 
             </select>
-            <br> <br>
+            <br> <br> -->
 
             <!-- Class binding com Interpolação -->
-            <div class="alert {{ classe.value }}" role="alert">
+            <!-- <div class="alert {{ classe.value }}" role="alert">
                 Texto colorido conforme o combobox
-            </div>
+            </div> -->
 
             <!-- Property binding de classe -->
-            <div class="alert " role="alert"
+            <!-- <div class="alert " role="alert"
             [class.alert-success]="classe.value == 'alert-success'">
                 Sucesso
             </div>
@@ -67,11 +67,11 @@
             <div class="alert " role="alert"
             [class.alert-danger]="classe.value == 'alert-danger'">
                 Erros
-            </div>
+            </div> -->
 
 
             <!-- Property binding com estilo de classe -->
-            <div class="alert alert-danger" role="alert"
+            <!-- <div class="alert alert-danger" role="alert"
             [style.display]="classe.value == 'alert-danger' ? 'block' : 'none' " >
                 Esse texto só aparece em caso de erro.
             </div>
@@ -80,6 +80,37 @@
         </div>
 
         
+    </article> -->
+
+
+    <article>
+        <h3>Event Binding</h3>
+        <div>
+            <button (click)="botaoClicado()"
+            class="btn btn-primary">Me clique!</button>
+
+            <br><br>
+
+            <input type="text"
+            (keyup)="onKeyUp($event)" 
+            (blur)="salvarValor(campoInput.value)" 
+            (keyup.enter)="salvarValor(campoInput.value )" #campoInput > 
+
+            <p> Valor atual: {{ valorAtual }} </p>
+            <p> Valor salvo: {{ valorSalvo }} </p>
+
+            <br>
+
+            <span
+            (mouseover)="onMouseOverOut()"
+            (mouseout)="onMouseOverOut()"
+            [class.highlight]="isMouseOver">
+                Passe o mouse sobre mim!
+            </span>
+
+
+        </div>
+
     </article>
 
 </section>
