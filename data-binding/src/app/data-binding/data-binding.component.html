@@ -1,4 +1,4 @@
-<section class="property-binding">
+<!-- <section class="property-binding"> -->
 
     <!-- <article>
         <h3>
@@ -83,7 +83,7 @@
     </article> -->
 
 
-    <article>
+    <!-- <article>
         <h3>Event Binding</h3>
         <div>
             <button (click)="botaoClicado()"
@@ -108,9 +108,55 @@
                 Passe o mouse sobre mim!
             </span>
 
+        </div>
+
+    </article> -->
+
+ 
+
+<!-- 
+</section> -->
+
+
+<section class="two-way-data-binding">
+    
+    <article>
+        <h3>Two way Data Binding</h3>
+
+        <div>
+            <input type="text"
+            #ValorEscrito 
+            [value]="nome"
+            (input)="nome = ValorEscrito.value">
+
+            <input type="text"
+            [ngModel]="nome"
+            (ngModelChange)="$event"
+            >
+
+            <input type="text"
+            [(ngModel)]="nome">
+
+
+
+
+
+            <p>Você digitou : {{ nome }} </p>
+        </div>
+
+
+        <div>
+            <input type="text" [(ngModel)]="pessoa.nome">
+            <input type="text" [(ngModel)]="pessoa.idade">
+
+
+            <p>Meu nome é {{pessoa.nome}} e tenho {{pessoa.idade}} anos !</p>
 
         </div>
 
     </article>
+
+
+
 
 </section>
