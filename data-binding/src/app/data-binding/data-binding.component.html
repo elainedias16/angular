@@ -1,4 +1,4 @@
-<!-- <section class="property-binding"> -->
+<section class="property-binding">
 
     <!-- <article>
         <h3>
@@ -14,12 +14,12 @@
         <p>Curso de Angular e gosto do curso: {{ true && cursoAngular}} </p>
 
     </article> -->
-<!-- 
-    <article>
-        <h3>property-binding</h3> -->
-        <!-- <img src=" {{ urlImage }} "> -->
 
-        <!-- <img [src]="urlImage"> 
+    <!-- <article>
+        <h3>property-binding</h3>
+        <img src=" {{ urlImage }} ">
+
+         <img [src]="urlImage"> 
 
     </article> -->
 
@@ -38,7 +38,7 @@
                 <option value="alert-info">Info</option>
                 <option value="alert-warning">Warning</option>
                 <option value="alert-danger">Erro</option>
-
+               
 
             </select>
             <br> <br> -->
@@ -74,11 +74,10 @@
             <!-- <div class="alert alert-danger" role="alert"
             [style.display]="classe.value == 'alert-danger' ? 'block' : 'none' " >
                 Esse texto só aparece em caso de erro.
-            </div>
+            </div> -->
 
     
-        </div>
-
+        <!-- </div>
         
     </article> -->
 
@@ -88,6 +87,9 @@
         <div>
             <button (click)="botaoClicado()"
             class="btn btn-primary">Me clique!</button>
+
+            <button (click)="botaoClicado()"
+            class="btn btn-danger">Me clique 2!</button>
 
             <br><br>
 
@@ -114,11 +116,11 @@
 
  
 
-<!-- 
-</section> -->
+
+</section>
 
 
-<section class="two-way-data-binding">
+<!-- <section class="two-way-data-binding">
     
     <article>
         <h3>Two way Data Binding</h3>
@@ -136,10 +138,6 @@
 
             <input type="text"
             [(ngModel)]="nome">
-
-
-
-
 
             <p>Você digitou : {{ nome }} </p>
         </div>
@@ -159,4 +157,23 @@
 
 
 
+</section> -->
+
+
+<section class="input-output-properties">
+
+    <article>
+        <h3>Input/Output Properties</h3>
+        <app-curso [nomeCurso]="nomeDoCurso"></app-curso>
+
+        <!-- <contador [valor]="valorInicial" (mudouValor)="onMudouValor($event)" ></contador> -->
+        <contador></contador>
+        
+
+
+
+
+    </article>
+
 </section>
+<!-- consertar erro de Emitindo Eventos com Output properties -->

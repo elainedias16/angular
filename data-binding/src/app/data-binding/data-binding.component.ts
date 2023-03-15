@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component , Output, Input} from '@angular/core';
 
 @Component({
   selector: 'app-data-binding', //se quiser usar como tag HTML
@@ -15,6 +15,9 @@ export class DataBindingComponent {
   valorSalvo : string = ''
   isMouseOver : boolean = false;
   nome : string = 'abc'
+
+  nomeDoCurso: string = 'Angular'
+  valorInicial = 15
 
   pessoa: any = {
     nome: 'def',
