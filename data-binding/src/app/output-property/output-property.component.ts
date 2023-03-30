@@ -1,4 +1,4 @@
-import { Component , Input, EventEmitter, Output} from '@angular/core';
+import { Component , Input, Output, EventEmitter, OnInit } from '@angular/core';
 
 @Component({
   selector: 'contador',
@@ -8,22 +8,17 @@ import { Component , Input, EventEmitter, Output} from '@angular/core';
 export class OutputPropertyComponent {
 
   @Input() valor  = 0
+  @Output() mudouValor = new EventEmitter() //essa evento sera vista pelo componente pai
 
-  @Output() mudouValor = new EventEmitter()
-
-  onMudouValor(evento: any){
-    console.log(evento)
-  }
-
-  
+ 
   incrementa(){
     this.valor++
-    this.mudouValor.emit({novoValor : this.valor})
+    this.mudouValor.emit({novoValor : this.valor}) //emitindo evento
   }
 
   decrementa(){
     this.valor-- 
-    this.mudouValor.emit({novoValor : this.valor})
+    this.mudouValor.emit({novoValor : this.valor}) //emitindo evento
 
   }
 

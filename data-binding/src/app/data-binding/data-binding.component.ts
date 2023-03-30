@@ -51,6 +51,10 @@ export class DataBindingComponent {
     this.isMouseOver = !this.isMouseOver;
   }
 
+  onMudouValor(evento : any){   //funcao para receber evento do componente filho
+    console.log(evento.novoValor)
+  }
+
 
   constructor(){
 
