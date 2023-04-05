@@ -6,7 +6,7 @@
     "outDir": "./dist/out-tsc",
     "forceConsistentCasingInFileNames": true,
     "strict": true,
-    "strictPropertyInitialization": false, //acrescentei aqui
+    "strictPropertyInitialization": false, //acrescentei aqui para poder nao precisar inicializar variavel quando declara ela
     "noImplicitOverride": true,
     "noPropertyAccessFromIndexSignature": true,
     "noImplicitReturns": true,
