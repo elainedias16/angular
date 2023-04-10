@@ -17,6 +17,7 @@
 
     <!-- <article>
         <h3>property-binding</h3>
+
         <img src=" {{ urlImage }} ">
 
          <img [src]="urlImage"> 
@@ -25,8 +26,8 @@
 
 
 
-
-    <!-- <article>
+<!-- 
+    <article>
         <h3>Class e Style Binding</h3>
 
         <div>
@@ -139,6 +140,8 @@
             <input type="text"
             [(ngModel)]="nome">
 
+            <br>
+
             <p>Você digitou : {{ nome }} </p>
         </div>
 
@@ -166,16 +169,14 @@
         <h3>Input/Output Properties</h3>
         <app-curso [nomeCurso]="nomeDoCurso"></app-curso>
 
-        <!-- <contador [valor]="valorInicial" (mudouValor)="onMudouValor($event)" ></contador> -->
         
         <contador [valor]="valorInicial"
         (mudouValor)="onMudouValor($event)"></contador>
         
-
-
-
-
     </article>
 
 </section>
+<!-- <contador [valor]="valorInicial" (mudouValor)="onMudouValor($event)" ></contador>  -->
+
+
 <!-- consertar erro de Emitindo Eventos com Output properties -->

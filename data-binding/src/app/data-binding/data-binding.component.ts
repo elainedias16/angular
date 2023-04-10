@@ -15,6 +15,7 @@ export class DataBindingComponent {
   valorSalvo : string = ''
   isMouseOver : boolean = false;
   nome : string = 'abc'
+  idade: number = 13
 
   nomeDoCurso: string = 'Angular'
   valorInicial = 15
@@ -49,6 +50,7 @@ export class DataBindingComponent {
 
   onMouseOverOut(){
     this.isMouseOver = !this.isMouseOver;
+    console.log(this.isMouseOver)
   }
 
   onMudouValor(evento : any){   //funcao para receber evento do componente filho
