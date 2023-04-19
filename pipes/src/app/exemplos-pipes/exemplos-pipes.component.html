@@ -1,10 +1,13 @@
 <h5>Exemplos livro</h5>
 
 <p> Titulo : {{ livro.titulo | uppercase | lowercase | camelCase }}   </p>
-<p> Estrelas : {{livro.rating  | number : '1.1-1'}}  </p>
+<!-- <p> Estrelas : {{livro.rating  | number : '1.1-1'}}  </p> -->
+<p> Estrelas : {{livro.rating  | number }}  </p>
 <p> Paginas: {{ livro.numeroPaginas | number }} </p>
 <p> Preco: {{ livro.preco | currency : 'BRL' }} </p>
-<p> Data Lançamento: {{ livro.dataLancamento | date: 'dd/MM/yyyy' }} </p>
+<!-- <p> Data Lançamento: {{ livro.dataLancamento | date: 'dd/MM/yyyy' }} </p> -->
+<p> Data Lançamento: {{ livro.dataLancamento | date }} </p>
+
 <p> Url: {{ livro.url }} </p>
 
 <br>

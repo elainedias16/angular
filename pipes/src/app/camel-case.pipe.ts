@@ -5,14 +5,21 @@ import { Pipe, PipeTransform } from '@angular/core';
 })
 export class CamelCasePipe implements PipeTransform {
 
-  transform(value: unknown, ...args: unknown[]): unknown {
-
-    let values = values.split(' ');
+  transform(value: any, ...args: any[]): any {
+    let values : string[]
+    values = value.split(' ');
+    let result = ''
     
+    for( let v of values){
+      result += this.capitalize(v) + ' '
+    }
 
-    return null;
+    return result;
+  }
 
-
+  capitalize(value : string){
+    return value.substring(0,1).toUpperCase() + 
+    value.substring(1).toLowerCase()
   }
 
 }
