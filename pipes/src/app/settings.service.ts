@@ -14,9 +14,9 @@ export class SettingsService {
 
   constructor() { }
 
-  // getLocale(){
-  //   return 'pt-BR';
-  // }
+  getLocale(){
+    return 'pt-BR';
+  }
 
   // platformBrowserDynamic().bootstrapModule(AppModule : any, {
   //   providers: [{provide: LOCALE_ID, useValue: 'pt-BR' }]
