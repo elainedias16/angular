@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable, interval } from 'rxjs';
+import { map, switchMap } from 'rxjs/operators';
 
-import { interval } from 'rxjs';
+// import { interval } from 'rxjs';
 
 
 @Component({
@@ -30,7 +31,11 @@ export class ExemplosPipesComponent implements OnInit{
 
   })
 
-  valorAsync2 = Observable.interval(2000)
+
+  // valorAsync2 = interval(2000)
+  //   .map( (valor: any)  => 'Valor assincrono 2' )
+         
+
 
   addCurso(valor : string){
     this.livros.push(valor)
