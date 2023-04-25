@@ -1,9 +1,9 @@
-import { Route, Routes } from "@angular/router";
+import { ModuleWithProviders } from "@angular/core";
+import { Route, RouterModule, Routes } from "@angular/router";
 
 import { HomeComponent } from "./home/home.component";
 import { LoginComponent } from "./login/login.component";
 import { CursosComponent } from "./cursos/cursos.component";
-import { ModuleWithProviders } from "@angular/core";
 
 const APP_ROUTES : Routes = [
     {path : 'login', component : LoginComponent },
@@ -12,4 +12,4 @@ const APP_ROUTES : Routes = [
 
 ];
 
-const routing : ModuleWithProviders; 
+export const routing : ModuleWithProviders<any> = RouterModule.forRoot(APP_ROUTES);
