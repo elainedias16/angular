@@ -19,12 +19,17 @@ export class AlunosService {
 
 
   getAluno(id : number){
-    let aluno
+    let alunos : any = []
+    alunos = this.getAlunos()
+
+    console.log(alunos)
+
     for(let i = 0; i < this.alunos.length ; i++){
-      aluno = this.alunos[i]
-      console.log(aluno.id)
-      if(id == aluno.id){
-        console.log('entrei aqui')
+      let aluno = this.alunos[i]
+      console.log('oi ' + aluno.id)
+
+      if(aluno.id == id){
+        console.log('entrei')
         return aluno
       }
     }

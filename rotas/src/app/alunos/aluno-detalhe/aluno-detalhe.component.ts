@@ -14,7 +14,7 @@ export class AlunoDetalheComponent implements OnInit, OnDestroy{
   id : number
   inscricao : Subscription
   aluno : any
-  paramter : any
+  //paramter : any
 
   constructor(
     private route : ActivatedRoute,
@@ -24,12 +24,13 @@ export class AlunoDetalheComponent implements OnInit, OnDestroy{
 
   ngOnInit(): void {
     this.inscricao = this.route.params.subscribe(
-      (params: Params) => {
+      (params) => {
+        this.id = params['id']
+        console.log(params)
+        console.log(params['id'])
 
-        this.paramter = params
-        console.log(this.paramter['id'])
         // console.log(this.id)
-        //this.aluno = this.alunosService.getAluno(this.id)
+        this.aluno = this.alunosService.getAluno(this.id)
       }
     )
   }

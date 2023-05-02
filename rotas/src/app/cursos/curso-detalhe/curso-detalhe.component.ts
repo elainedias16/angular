@@ -28,6 +28,7 @@ export class CursoDetalheComponent implements OnInit{
     this.inscricao = this.route.params.subscribe(
       (params)=>{
         this.id = params['id']
+        console.log(params)
         this.curso = this.cursosService.getCurso(this.id)
 
         if(this.curso == null){
