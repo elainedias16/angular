@@ -10,13 +10,13 @@ import { Subscription } from 'rxjs';
   templateUrl: './aluno-form.component.html',
   styleUrls: ['./aluno-form.component.css']
 })
-export class AlunoFormComponent {
+export class AlunoFormComponent implements OnInit, OnDestroy{
 
   aluno: any = {};
   inscricao: Subscription;
 
   constructor(
-    private route: ActivatedRoute,
+    private route: ActivatedRoute, //para conseguir os parametros da rota
     private alunosService: AlunosService
   ) { }
 

@@ -26,10 +26,8 @@ export class AlunosService {
 
     for(let i = 0; i < this.alunos.length ; i++){
       let aluno = this.alunos[i]
-      console.log('oi ' + aluno.id)
 
       if(aluno.id == id){
-        console.log('entrei')
         return aluno
       }
     }
