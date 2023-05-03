@@ -14,7 +14,7 @@ import { AlunoFormComponent } from './aluno-form/aluno-form.component';
 
 //Creating routes with child routes:
 const alunosRoutes: Routes = [
-    {path : 'alunos' , component : AlunosComponent, children:[
+    {path : '' , component : AlunosComponent, children:[
         {path : 'novo' , component : AlunoFormComponent},
         {path : ':id' , component : AlunoDetalheComponent},
         {path : ':id/editar' , component : AlunoFormComponent}

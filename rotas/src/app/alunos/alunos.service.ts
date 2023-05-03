@@ -22,8 +22,6 @@ export class AlunosService {
     let alunos : any = []
     alunos = this.getAlunos()
 
-    console.log(alunos)
-
     for(let i = 0; i < this.alunos.length ; i++){
       let aluno = this.alunos[i]
 

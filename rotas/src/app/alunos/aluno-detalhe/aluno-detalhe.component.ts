@@ -27,10 +27,6 @@ export class AlunoDetalheComponent implements OnInit, OnDestroy{
     this.inscricao = this.route.params.subscribe(
       (params) => {
         this.id = params['id']
-        console.log(params)
-        console.log(params['id'])
-
-        // console.log(this.id)
         this.aluno = this.alunosService.getAluno(this.id)
       }
     )
