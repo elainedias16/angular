@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Resolve, ActivatedRouteSnapshot, RouterStateSnapshot } from '@angular/router';
+import { ActivatedRouteSnapshot, RouterStateSnapshot } from '@angular/router';
 import { Observable } from 'rxjs';
 
 import { Aluno } from '../aluno';
@@ -20,7 +20,8 @@ export class AlunoDetalheResolver  {
         ): 
         Observable<any> | Promise<any> | any {
 
-            let id = route.params['id']
+        console.log('AlunoDetalheResolver')
+        let id = route.params['id']
 
         return this.alunosService.getAluno(id);
     }
