@@ -19,6 +19,8 @@ export class DataFormComponent implements OnInit{
   formulario : FormGroup
   //estados : EstadoBr[]
   estados : Observable<any>
+  //estados : Observable<EstadoBr[]>
+
 
   constructor(
     private formBuilder : FormBuilder,

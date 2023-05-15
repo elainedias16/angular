@@ -115,7 +115,8 @@
       
           <div class="col-md-3" [ngClass]="aplicaCssErro('endereco.estado')">
             <label for="estado" class="control-label">Estado</label>
-            <select type="text" class="form-control" id="estado">
+
+            <select class="form-control" id="estado" formControlName="estado">
               <option *ngFor="let estado of estados | async" [value]="estado.sigla">{{ estado.nome }}</option>
             </select>
             <!-- formControlName="estado"> -->
