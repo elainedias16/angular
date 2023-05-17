@@ -20,7 +20,13 @@ export class DataFormComponent implements OnInit{
   //estados : EstadoBr[]
   estados : Observable<any>
   //estados : Observable<EstadoBr[]>
+  cargos : any[]
+  tecnologias : any[]
+  newsletter : [null]
+  newsletterOp: any[]
 
+
+  comparartecnologias: (o1: any,o2: any) => boolean;
 
   constructor(
     private formBuilder : FormBuilder,
@@ -40,10 +46,12 @@ export class DataFormComponent implements OnInit{
       // })
 
     this.estados = this.dropDownService.getEstadosBr()
-
-    
+    this.cargos = this.dropDownService.getCargos()
+    this.tecnologias = this.dropDownService.getTecnologias()
     // this.dropDownService.getEstadosBr()
     // .subscribe( (dados : any) => { this.estados = dados ; console.log(this.estados)})  
+    this.newsletterOp = this.dropDownService.getNewsletter()
+
 
     this.formulario = this.formBuilder.group({
       nome: [null, [Validators.required, Validators.minLength(3), Validators.maxLength(20)]],
@@ -57,7 +65,11 @@ export class DataFormComponent implements OnInit{
         bairro : [null , Validators.required],
         cidade : [null , Validators.required],
         estado : [null , Validators.required],
-      })
+      }),
+
+      cargo: [null],
+      tecnologias : [null],
+      newsletter : [null]
 
     })
 
@@ -166,4 +178,22 @@ export class DataFormComponent implements OnInit{
       }
     })
   }
+
+
+  setarCargo(){
+    const cargo = {nome:'Dev', nivel: 'Pleno', desc: 'Dev Pl'}
+    this.formulario.get('cargo')?.setValue(cargo)
+  
+  
+  }
+
+  compararCargos(obj1 : any, obj2 : any){
+    return obj1 && obj2 ? (obj1.nome === obj2.nome && obj1.nivel === obj2.nivel) : obj1 === obj2
+  }
+
+  setarTecnologias(){
+    this.formulario.get('tecnologias')?.setValue(['java', 'javascript', 'php'])
+  }
+
+  
 }
