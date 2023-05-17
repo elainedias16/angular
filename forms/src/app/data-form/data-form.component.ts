@@ -69,7 +69,8 @@ export class DataFormComponent implements OnInit{
 
       cargo: [null],
       tecnologias : [null],
-      newsletter : [null]
+      newsletter : [null],
+      termos : [null, Validators.pattern('true')]
 
     })
 
