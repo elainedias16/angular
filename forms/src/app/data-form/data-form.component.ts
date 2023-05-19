@@ -1,6 +1,6 @@
 import { HttpClientModule } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { FormArray, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import {HttpClient} from '@angular/common/http'
 import { map } from 'rxjs';
 import { CampoControlErroComponent } from '../shared/campo-control-erro/campo-control-erro.component';
@@ -25,7 +25,8 @@ export class DataFormComponent implements OnInit{
   newsletter : [null]
   newsletterOp: any[]
 
-
+  frameworks = ['Angular', 'React', 'Vue', 'Sencha']
+  
   comparartecnologias: (o1: any,o2: any) => boolean;
 
   constructor(
@@ -70,12 +71,27 @@ export class DataFormComponent implements OnInit{
       cargo: [null],
       tecnologias : [null],
       newsletter : [null],
-      termos : [null, Validators.pattern('true')]
-
+      termos : [null, Validators.pattern('true')],
+      frameworks : this.buildFrameworks()
     })
 
     //Validators.pattern("[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?")
   }
+
+  buildFrameworks(){
+    const values = this.frameworks.map(v => new FormControl(false))
+
+    return this.formBuilder.array(values)
+    // this.formBuilder.array [
+    //   new FormControl(false),
+    //   new FormControl(false),
+    //   new FormControl(false),
+    //   new FormControl(false),
+
+    // ]
+  }
+
+
 
   onSubmit(){
     //console.log(this.formulario.value)
@@ -195,6 +211,17 @@ export class DataFormComponent implements OnInit{
   setarTecnologias(){
     this.formulario.get('tecnologias')?.setValue(['java', 'javascript', 'php'])
   }
+
+  // getOpTecnologias(){
+  //   return this.formulario.get('tecnologias') as FormArray 
+
+  //   // ret
+    
+  // }
+
+  // getFrameworksData() { 
+  //   return this.formulario? this.formulario.get('Data') as Form Array
+  // }
 
   
 }

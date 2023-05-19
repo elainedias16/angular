@@ -167,6 +167,7 @@
 
     </div>
     <br>
+
     <div class="form-group">
       <div class="col-md3" [ngClass]="aplicaCssErro('termos')" >
         <div class="checkbox">
@@ -179,7 +180,27 @@
             </app-campo-control-erro>
         </div>
       </div>
+      <br>
+      <div class="col-md3" [ngClass]="aplicaCssErro('frameworks')" >
+        <label for="frameworks">Frameworks</label>
+        <div id="frameworks" class="row">
+
+          <div class="checkbox" class="col-sm-4" 
+          formArrayName="frameworks"
+          *ngFor="let item of formulario.get('frameworks'); let i = index">
+            <label class="checkbox-inline">
+              <input type="checkbox" [formControlName="i"]> {{frameworks[i]}}
+            </label>
+          </div>
+
+  
+        </div>
+      </div>
     </div>
+
+    
+      
+   
 
     <br>
     <button type="submit" class="btn btn-primary" >Submit</button>
